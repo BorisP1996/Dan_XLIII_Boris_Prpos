@@ -10,63 +10,68 @@
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.FirstName,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
-                 Margin="160,25,0,0" />
+                 Margin="160,25,0,0"
+                 PreviewTextInput="LettersValidationTextBox" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Surname,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
-                 Margin="160,67,0,0" />
+                 Margin="160,67,0,0"
+                 PreviewTextInput="LettersValidationTextBox" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.JMBG,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
-                 Margin="160,110,0,0" />
+                 Margin="160,110,0,0"
+                 PreviewTextInput="NumbersOnlyTextBox"
+                 />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Account,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
-                 Margin="160,155,0,0" />
+                 Margin="160,155,0,0"
+                 PreviewTextInput="NumbersOnlyTextBox" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Email,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
                  Margin="160,200,0,0" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Salary,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
                  Margin="160,245,0,0" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Position,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
                  Margin="160,287,0,0" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Username,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
                  Margin="160,335,0,0" />
         <TextBox HorizontalAlignment="Left"
                  Height="23"
                  TextWrapping="Wrap"
-                 Text="TextBox"
+                 Text="{Binding Employe.Pasword,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  Width="120"
                  Margin="160,375,0,0" />
@@ -145,11 +150,13 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="95"
-                Margin="470,286,0,0" />
+                Margin="470,286,0,0" 
+                Command="{Binding Save,UpdateSourceTrigger=PropertyChanged}"/>
         <Button Content="Log out"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="95"
-                Margin="635,286,0,0" />
+                Margin="635,286,0,0" 
+                Command="{Binding Close,UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>
