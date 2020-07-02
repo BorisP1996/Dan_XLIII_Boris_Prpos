@@ -16,7 +16,10 @@ namespace Zadatak_1.ViewModel
     {
         CreateManager createManagerWindow;
         Entity context = new Entity();
+        public CreateManagerViewModel()
+        {
 
+        }
         public CreateManagerViewModel(CreateManager cmOpen)
         {
             createManagerWindow = cmOpen;
@@ -136,6 +139,7 @@ namespace Zadatak_1.ViewModel
                 context.tblManagers.Add(newManager);
 
                 context.SaveChanges();
+                MessageBox.Show("Manager is created.");
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {

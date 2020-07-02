@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Zadatak_1.Command;
+using Zadatak_1.Model;
 using Zadatak_1.View;
 
 namespace Zadatak_1.ViewModel
@@ -13,6 +14,7 @@ namespace Zadatak_1.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         MainWindow main;
+        Entity context = new Entity();
 
         public MainWindowViewModel(MainWindow mainOpen)
         {
@@ -67,6 +69,68 @@ namespace Zadatak_1.ViewModel
                     CreateManager createManager = new CreateManager();
                     createManager.ShowDialog();
                 }
+                List<String> UsernameList = new List<string>();
+                List<tblEmploye> EmployeList = context.tblEmployes.ToList();
+
+                foreach (tblEmploye item in EmployeList)
+                {
+                    UsernameList.Add(item.Username);
+                }
+
+                List<string> PasswordList = new List<string>();
+                foreach (tblEmploye item in EmployeList)
+                {
+                    PasswordList.Add(item.Pasword);
+                }
+                
+                if (!PasswordList.Contains(Password) || !UsernameList.Contains(Username))
+                {
+                    MessageBox.Show("Username or password does not exist.");
+                }
+                else
+                {
+                    tblEmploye employeID1 = (from r in context.tblEmployes where r.Pasword == Password select r).First();
+                    tblEmploye employeID2 = (from r in context.tblEmployes where r.Username == Username select r).First();
+
+                    if (employeID1.EmployeID!=employeID2.EmployeID)
+                    {
+                        MessageBox.Show("Parametres exist but they are not matched.");
+                    }
+                    //ulogovan ali ne zna se ko je
+                    if (employeID1.EmployeID == employeID2.EmployeID)
+                    {
+                        List<int> employeInManagerList = new List<int>();
+                        List<tblManager> managerList = context.tblManagers.ToList();
+                        foreach (tblManager item in managerList)
+                        {
+                            employeInManagerList.Add(item.EmployeID.GetValueOrDefault());
+                        }
+                        //menager loged in
+                        if (employeInManagerList.Contains(employeID1.EmployeID))
+                        {
+                            tblManager manager = (from r in context.tblManagers where r.EmployeID == employeID1.EmployeID select r).First();
+                            //modify mendager
+                            if (manager.LevelID==1)
+                            {
+                                ModifyStart ms = new ModifyStart();
+                                ms.Show();
+                            }
+                            //readonly menager
+                            if (manager.LevelID==2)
+                            {
+                                MessageBox.Show("readonly");
+
+                            }
+                        }
+                        //user
+                        if (!employeInManagerList.Contains(employeID1.EmployeID))
+                        {
+                            MessageBox.Show("User");
+                        }
+                    }
+                }
+            
+
             }
             catch (Exception ex)
             {
