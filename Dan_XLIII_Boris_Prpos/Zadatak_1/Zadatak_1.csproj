@@ -69,7 +69,6 @@
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ModifyManagerViewModel.cs" />
     <Compile Include="ViewModel\ModifyMenagerDeleteViewModel.cs" />
-    <Compile Include="ViewModel\ModifyStartViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\CreateManager.xaml.cs">
       <DependentUpon>CreateManager.xaml</DependentUpon>
@@ -79,9 +78,6 @@
     </Compile>
     <Compile Include="View\ModifyMenagerDelete.xaml.cs">
       <DependentUpon>ModifyMenagerDelete.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ModifyStart.xaml.cs">
-      <DependentUpon>ModifyStart.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -104,10 +100,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ModifyMenagerDelete.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ModifyStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

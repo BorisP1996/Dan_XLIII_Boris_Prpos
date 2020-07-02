@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadatak_1.View"
         mc:Ignorable="d"
-        Title="ModifyMenagerDelete" Height="450" Width="800">
+        Title="ModifyMenagerDelete"
+        Height="450"
+        Width="800">
     <Grid>
         <DataGrid HorizontalAlignment="Left"
                   Height="auto"
@@ -50,10 +52,11 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Button"
+        <Button Content="Close"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="75"
-                Margin="635,70,0,0" />
+                Margin="640,170,0,0"
+                Command="{Binding Close,UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 </Window>

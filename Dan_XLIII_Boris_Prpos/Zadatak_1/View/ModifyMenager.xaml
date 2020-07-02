@@ -133,11 +133,5 @@
                 Width="95"
                 Margin="475,375,0,0"
                 Command="{Binding Close,UpdateSourceTrigger=PropertyChanged}" />
-        <Button Content="View all"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Width="95"
-                Margin="615,375,0,0"
-                Command="{Binding View,UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 </Window>

@@ -112,14 +112,13 @@ namespace Zadatak_1.ViewModel
                             //modify mendager
                             if (manager.LevelID==1)
                             {
-                                ModifyStart ms = new ModifyStart();
-                                ms.Show();
+                                ModifyMenager ms = new ModifyMenager();
+                                ms.ShowDialog();
                             }
                             //readonly menager
                             if (manager.LevelID==2)
                             {
-                                MessageBox.Show("readonly");
-
+                                MessageBox.Show("ReadOnly manager");
                             }
                         }
                         //user
